@@ -82,3 +82,5 @@ dump.rdb
 # PostgreSQL dump
 latest.dump
 db.dump
+
+/vendor/bundle

@@ -30,6 +30,14 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'faker'
+end
+
 group :doc do
   gem 'sdoc', require: false
 end
