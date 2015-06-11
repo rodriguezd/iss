@@ -1,0 +1,70 @@
+!!!
+%html
+  %head
+    %title ISS
+    %meta{charset: "utf-8"}
+    %meta{name: "viewport", content:"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"}
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag :modernizr
+    = csrf_meta_tags
+  %body
+    #alerts.center-block
+      - flash.each do |name, msg|
+        - if !msg.blank? && name != "errors"
+          %div{class: "#{flash_class(name)} alert-dismissable"}
+            %button.close{type: "button", "data-dismiss" => "alert", "aria-hidden" => "true"} &times;
+            = msg
+
+    %header#main
+      .navbar.navbar-default
+        .navbar-header
+          %button.navbar-toggle.collapsed{type:"button", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+
+          %h1.navbar-brand
+            = link_to root_path do
+              = image_tag "vive-logo-white.png", width: "128px", alt: "Vive", class: "vive-log-image"
+
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          - if current_user
+            %ul.expanded-nav-menu
+              %li
+                %a{ href: root_path}
+                  Appointments
+              %li
+                %a{ href: lookbook_path}
+                  Lookbook
+              %li
+                %a{ href: "http://magazine.vivestyle.com/"}
+                  Magazine
+              %li
+                %a{ href: salons_path}
+                  Salons
+              %li
+                = link_to "Sign Out", destroy_user_session_path
+              - if !@home_index_view && !@new_booking_view
+                %li
+                  = link_to "Request Appointment", new_booking_path, class: "btn btn-info"
+          - else
+            %ul.expanded-nav-menu
+              %li
+                %a{ href: lookbook_path}
+                  Lookbook
+              %li
+                %a{ href: "http://magazine.vivestyle.com/"}
+                  Magazine
+              %li
+                %a{ href: salons_path}
+                  Salons
+              %li
+                = link_to "Sign in", new_user_session_path, class: "btn btn-info"
+
+    .container
+      = yield
+
+    = yield :modals
+

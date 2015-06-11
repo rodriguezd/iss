@@ -14,6 +14,7 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'font-awesome-rails', '>= 4.1.0'
 gem 'geocoder'
+gem 'modernizr-rails'
 
 group :development do
   gem 'better_errors'
