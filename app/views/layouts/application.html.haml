@@ -25,43 +25,24 @@
             %span.icon-bar
             %span.icon-bar
 
-          %h1.navbar-brand
+          .navbar-brand
             = link_to root_path do
-              = image_tag "vive-logo-white.png", width: "128px", alt: "Vive", class: "vive-log-image"
+              = image_tag "ISS_emblem.png", width: "64px", alt: "ISS Emblem", class: "vive-log-image"
 
         .collapse.navbar-collapse#bs-example-navbar-collapse-1
-          - if current_user
-            %ul.expanded-nav-menu
-              %li
-                %a{ href: root_path}
-                  Appointments
-              %li
-                %a{ href: lookbook_path}
-                  Lookbook
-              %li
-                %a{ href: "http://magazine.vivestyle.com/"}
-                  Magazine
-              %li
-                %a{ href: salons_path}
-                  Salons
-              %li
-                = link_to "Sign Out", destroy_user_session_path
-              - if !@home_index_view && !@new_booking_view
-                %li
-                  = link_to "Request Appointment", new_booking_path, class: "btn btn-info"
-          - else
-            %ul.expanded-nav-menu
-              %li
-                %a{ href: lookbook_path}
-                  Lookbook
-              %li
-                %a{ href: "http://magazine.vivestyle.com/"}
-                  Magazine
-              %li
-                %a{ href: salons_path}
-                  Salons
-              %li
-                = link_to "Sign in", new_user_session_path, class: "btn btn-info"
+          %ul.nav.navbar-nav
+            %li
+              %a{ href: root_path}
+                Home
+            %li
+              %a{ href: "#"}
+                Lookbook
+            %li
+              %a{ href: "#"}
+                Magazine
+            %li
+              %a{ href: "#"}
+                Salons
 
     .container
       = yield
