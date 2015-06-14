@@ -1,1 +1,25 @@
-Home Page
+.row
+  .col-sm-3
+    .iss-twitter-feed
+      .title.text-center
+        ISS Feed
+      .iss-feed-picture
+        = image_tag "ISS_insignia.svg", width: "211px"
+      .iss-tweet
+        %a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610170383933808640", :href => "https://twitter.com/ISS101"} Tweets by @ISS101
+
+  .col-sm-6
+    .live-tracker-title.text-center
+      Where is the ISS right now?
+    %iframe{:src => "http://wsn.spaceflight.esa.int/iss/ISStracker2014b.swf", width: "470px", height: "264px", frameborder: "0"}
+  .col-sm-3
+    .crew-twitter-feed
+      .title.text-center
+        Crew Feed
+      .crew-member-picture
+        = image_tag "scott_kelly.jpg", width: "211px"
+      .crew-member-tweet
+        %a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610164536457457664", :href => "https://twitter.com/StationCDRKelly"} Tweets by @StationCDRKelly
+
+:javascript
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
