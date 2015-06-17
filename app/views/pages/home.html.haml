@@ -1,24 +1,36 @@
-.row
-  .col-sm-3
-    .iss-twitter-feed
-      .title.text-center
-        ISS Feed
-      .iss-feed-picture
-        = image_tag "ISS_insignia.svg", width: "211px"
-      .iss-tweet
-        /%a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610170383933808640", :href => "https://twitter.com/ISS101"} Tweets by @ISS101
-        = raw @iss_tweet_html
+#home
+  .row
+    .col-sm-3
+      .iss-twitter-feed
+        .title.text-center
+          ISS Feed
+        .iss-feed-picture
+          = image_tag "ISS_insignia.svg", width: "211px"
+        .iss-tweet
+          /%a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610170383933808640", :href => "https://twitter.com/ISS101"} Tweets by @ISS101
+          = raw @iss_tweet_html
 
-  .col-sm-6
-    .live-tracker-title.text-center
-      Where is the ISS right now?
-    %iframe{:src => "http://wsn.spaceflight.esa.int/iss/ISStracker2014b.swf", width: "470px", height: "264px", frameborder: "0"}
-  .col-sm-3
-    .crew-twitter-feed
-      .title.text-center
-        Crew Feed
-      .crew-member-picture
-        = image_tag @latest_crew_tweet_image, width: "211px"
-      .crew-member-tweet
-        /%a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610164536457457664", :href => "https://twitter.com/StationCDRKelly"} Tweets by @StationCDRKelly
-        = raw @crew_tweet_html
+    .col-sm-6
+      .live-tracker
+        .live-tracker-title.text-center
+          Where is the ISS right now?
+        .live-tracker-map
+          %iframe{:src => "http://wsn.spaceflight.esa.int/iss/ISStracker2014b.swf", width: "455px", height: "256px", frameborder: "0"}
+      .location-entry-form
+        = form_tag sightings_path, remote: true do
+          .form-group.text-center
+            = label_tag :location, "Where are you?"
+            = text_field_tag :location, '', class: "form-control"
+          .submit-button-container.text-center
+            = submit_tag "Submit"
+      .sightings-listing
+        
+    .col-sm-3
+      .crew-twitter-feed
+        .title.text-center
+          Crew Feed
+        .crew-member-picture
+          = image_tag @latest_crew_tweet_image, width: "211px"
+        .crew-member-tweet
+          /%a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610164536457457664", :href => "https://twitter.com/StationCDRKelly"} Tweets by @StationCDRKelly
+          = raw @crew_tweet_html
