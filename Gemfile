@@ -17,6 +17,7 @@ gem 'geocoder'
 gem 'modernizr-rails'
 gem 'twitter'
 gem 'figaro'
+gem 'timezone'
 
 group :development do
   gem 'better_errors'

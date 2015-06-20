@@ -23,10 +23,16 @@ class PagesController < ApplicationController
     latitude = results.first.latitude
     longitude = results.first.longitude
 
-    json = open("http://api.open-notify.org/iss-pass.json?lat=#{latitude}&lon=#{longitude}&n=8").read
+    json = open("http://api.open-notify.org/iss-pass.json?lat=#{latitude}&lon=#{longitude}&n=30").read
     data = JSON.parse(json)
 
-    @sightings = data["response"]
+    sightings = data["response"].map do |sighting|
+      if Time.at(sighting["risetime"]).hour > 18 || Time.at(sighting["risetime"]).hour < 7
+        [Time.at(sighting["risetime"]).strftime("%B %-d at %-I:%M %p"),
+        (sighting["duration"] / 60).to_s + " min " + (sighting["duration"]%60).to_s + " sec"]
+      end
+    end
+    @sightings = sightings.compact
   end
 
 end

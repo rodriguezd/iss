@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   get 'pages/home' => 'pages#home'
   post 'sightings' => 'pages#sightings'
 
-
 end

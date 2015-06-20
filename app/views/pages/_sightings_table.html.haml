@@ -1,5 +1,8 @@
 %table.table.table-striped.table-bordered.table-condensed
+  %tr
+    %th.text-center Date/Time
+    %th.text-center Duration
   - @sightings.each do |sighting|
     %tr
-      %td= sighting["risetime"]
-      %td= sighting["duration"]
+      %td= sighting[0]
+      %td= sighting[1]

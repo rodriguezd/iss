@@ -31,5 +31,9 @@ module Iss
       g.helper_specs false
       g.stylesheets false
     end
+
+    Timezone::Configure.begin do |c|
+      c.username = 'drodriguez'
+    end
   end
 end
