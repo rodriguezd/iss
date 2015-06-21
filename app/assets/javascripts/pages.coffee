@@ -13,6 +13,7 @@
 
 $(document).ready ->
  $('.player').mb_YTPlayer()
+ $('[data-toggle="popover"]').popover()
 
 # (($) ->
 #   $(document).ready ->
