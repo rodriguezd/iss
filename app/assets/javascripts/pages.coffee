@@ -11,3 +11,10 @@
 #    return
 #  )(document, 'script', 'twitter-wjs')
 
+$(document).ready ->
+ $('.player').mb_YTPlayer()
+
+# (($) ->
+#   $(document).ready ->
+#     $('.player').mb_YTPlayer()
+# ) jQuery
