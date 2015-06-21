@@ -1,0 +1,55 @@
+#links
+  %a{"data-gallery" => "", :href => "#{image_path 'gallery/astrokarenn.jpg'}"}
+    %img{:src => "#{image_path 'gallery/thumbnails/astrokarenn.jpg'}"}
+  %a{"data-gallery" => "", :href => "#{image_path 'gallery/astroterry.jpg'}"}
+    %img{:src => "#{image_path 'gallery/thumbnails/astroterry.jpg'}"}
+  %a{"data-gallery" => "", :href => "#{image_path 'gallery/stationcdrkelly.jpg'}"}
+    %img{:src => "#{image_path 'gallery/thumbnails/stationcdrkelly.jpg'}"}
+  %a{"data-gallery" => "", :href => "#{image_path 'gallery/iss_current.jpg'}"}
+    %img{:src => "#{image_path 'gallery/thumbnails/iss_current.jpg'}"}
+  %a{"data-gallery" => "", :href => "#{image_path 'gallery/iss043e276473.jpg'}"}
+    %img{:src => "#{image_path 'gallery/thumbnails/iss043e276473.jpg'}"}
+  %a{"data-gallery" => "", :href => "#{image_path 'gallery/iss043e279223.jpg'}"}
+    %img{:src => "#{image_path 'gallery/thumbnails/iss043e279223.jpg'}"}
+  %a{"data-gallery" => "", :href => "#{image_path 'gallery/iss043e284928.jpg'}"}
+    %img{:src => "#{image_path 'gallery/thumbnails/iss043e284928.jpg'}"}
+  %a{"data-gallery" => "", :href => "#{image_path 'gallery/iss043e284951.jpg'}"}
+    %img{:src => "#{image_path 'gallery/thumbnails/iss043e284951.jpg'}"}
+  %a{"data-gallery" => "", :href => "#{image_path 'gallery/iss044e001198.jpg'}"}
+    %img{:src => "#{image_path 'gallery/thumbnails/iss044e001198.jpg'}"}
+
+#blueimp-gallery.blueimp-gallery.blueimp-gallery-controls{"data-use-bootstrap-modal": "false"}
+  / The container for the modal slides
+  .slides
+  / Controls for the borderless lightbox
+  %h3.title
+  %a.prev ‹
+  %a.next ›
+  %a.close ×
+  %a.play-pause
+  %ol.indicator
+  / The modal dialog, which will be used to wrap the lightbox content
+  .modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", :type => "button"} &times;
+          %h4.modal-title
+        .modal-body.next
+        .modal-footer
+          %button.btn.btn-default.pull-left.prev{:type => "button"}
+            %i.glyphicon.glyphicon-chevron-left
+            Previous
+          %button.btn.btn-primary.next{:type => "button"}
+            Next
+            %i.glyphicon.glyphicon-chevron-right
+
+:javascript
+  document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+  };
