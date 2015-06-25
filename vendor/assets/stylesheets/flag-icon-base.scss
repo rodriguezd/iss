@@ -20,7 +20,7 @@
 
 @mixin flag-icon($country) {
   .flag-icon-#{$country} {
-    background: asset_url("#{$flag-icon-css-path}#{$flag-icon-rect-path}/#{$country}.svg");
+    background-image: image_url("#{$flag-icon-css-path}#{$flag-icon-rect-path}/#{$country}.svg");
     &.flag-icon-squared {
       background: url("#{$flag-icon-css-path}#{$flag-icon-square-path}/#{$country}.svg");
     }

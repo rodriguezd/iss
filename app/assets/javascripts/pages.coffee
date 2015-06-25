@@ -11,7 +11,7 @@
 #    return
 #  )(document, 'script', 'twitter-wjs')
 
-$(document).ready ->
+$(document).on "ready page:load", ->
  $('.player').mb_YTPlayer()
  $('[data-toggle="popover"]').popover()
 
