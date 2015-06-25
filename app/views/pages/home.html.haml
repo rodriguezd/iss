@@ -1,40 +1,39 @@
 #home
-  .row
-    .col-md-3
-      .iss-twitter-feed.text-center
-        .title
-          ISS Feed
-        .iss-feed-picture
-          = image_tag "ISS_insignia.svg", width: "211px"
-        .iss-tweet
-          /%a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610170383933808640", :href => "https://twitter.com/ISS101"} Tweets by @ISS101
-          = raw @iss_tweet_html
+  %section.content-section.video-section
+    .pattern-overlay
+    %a#bgndVideo.player{"data-property" => "{videoURL:'https://www.youtube.com/watch?v=fjtjTMRqzn8',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}"} bg
+    .row
+      .col-md-3
+        .iss-twitter-feed.text-center
+          .title
+            ISS Feed
+          .iss-feed-picture
+            = image_tag "ISS_insignia.svg", width: "211px"
+          .iss-tweet
+            /%a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610170383933808640", :href => "https://twitter.com/ISS101"} Tweets by @ISS101
+            = raw @iss_tweet_html
 
-    .col-md-6
-      .live-tracker.text-center
-        .live-tracker-title
-          Where is the ISS right now?
-        .live-tracker-map
-          %iframe{:src => "http://wsn.spaceflight.esa.int/iss/ISStracker2014b.swf", width: "455px", height: "256px", frameborder: "0"}
-      .location-entry-form.text-center
-        = form_tag sightings_path, remote: true do
-          .form-group
-            = label_tag :location, "Where are you?"
-            = text_field_tag :location, '', class: "form-control"
-          .submit-button-container
-            = submit_tag "Submit"
-      .sightings-listing
+      .col-md-6
+        .live-tracker.text-center
+          .live-tracker-title
+            Where is the ISS right now?
+          .live-tracker-map
+            %iframe{:src => "http://wsn.spaceflight.esa.int/iss/ISStracker2014b.swf", width: "455px", height: "256px", frameborder: "0"}
+        .location-entry-form.text-center
+          = form_tag sightings_path, remote: true do
+            .form-group
+              = label_tag :location, "Where are you?"
+              = text_field_tag :location, '', class: "form-control"
+            .submit-button-container
+              = submit_tag "Submit"
+        .sightings-listing
 
-    .col-md-3
-      .crew-twitter-feed.text-center
-        .title
-          Crew Feed
-        .crew-member-picture
-          = image_tag @latest_crew_tweet_image, width: "211px"
-        .crew-member-tweet
-          /%a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610164536457457664", :href => "https://twitter.com/StationCDRKelly"} Tweets by @StationCDRKelly
-          = raw @crew_tweet_html
-
-  /%section.content-section.video-section
-  /  .pattern-overlay
-  /  %a#bgndVideo.player{"data-property" => "{videoURL:'https://www.youtube.com/watch?v=fjtjTMRqzn8',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}"} bg
+      .col-md-3
+        .crew-twitter-feed.text-center
+          .title
+            Crew Feed
+          .crew-member-picture
+            = image_tag @latest_crew_tweet_image, width: "211px"
+          .crew-member-tweet
+            /%a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610164536457457664", :href => "https://twitter.com/StationCDRKelly"} Tweets by @StationCDRKelly
+            = raw @crew_tweet_html
