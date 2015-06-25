@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require jquery.mb.YTPlayer
 //= require bootstrap-image-gallery
 //= require blueimp-gallery
