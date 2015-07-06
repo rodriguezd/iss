@@ -12,8 +12,9 @@ class PagesController < ApplicationController
     data = JSON.parse(json)
     @crew_tweet_html = data["html"]
 
-    latest_iss_tweet_id = twitter_feed.user_timeline("ISS101").first.id
-    json = open("https://api.twitter.com/1/statuses/oembed.json?id=#{latest_crew_tweet_id}").read
+    # latest_iss_tweet_id = twitter_feed.user_timeline("ISS101").first.id
+    latest_iss_tweet_id = twitter_feed.list_timeline(212963954).first.id
+    json = open("https://api.twitter.com/1/statuses/oembed.json?id=#{latest_iss_tweet_id}").read
     data = JSON.parse(json)
     @iss_tweet_html = data["html"]
   end
