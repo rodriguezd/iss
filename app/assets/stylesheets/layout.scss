@@ -1,10 +1,18 @@
 header#main {
-  ul.nav.navbar-nav {
-    margin-top: 20px;
-    font-size: 20px;
-  }
+  .navbar {
+    background: none;
+    border: none;
+    ul.nav.navbar-nav {
+      margin-top: 20px;
+      font-size: 20px;
+      li a {
+        color: #0071D7;
+      }
 
-  .navbar-brand {
-    height: inherit;
+    }
+
+    .navbar-brand {
+      height: inherit;
+    }
   }
 }

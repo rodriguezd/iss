@@ -1,7 +1,7 @@
 #home
   %section.content-section.video-section
     .pattern-overlay
-    / %a#bgndVideo.player{"data-property" => "{videoURL:'https://www.youtube.com/watch?v=fjtjTMRqzn8',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}"} bg
+    %a#bgndVideo.player{"data-property" => "{videoURL:'https://www.youtube.com/watch?v=fjtjTMRqzn8',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}"} bg
     .row
       .col-md-6.col-md-push-3
         .live-tracker.text-center
@@ -12,8 +12,8 @@
         .location-entry-form.text-center
           = form_tag sightings_path, remote: true do
             .form-group
-              = label_tag :location, "Where are you?"
-              = text_field_tag :location, '', class: "form-control"
+              = label_tag :location, "See the ISS fly overhead."
+              = text_field_tag :location, '', placeholder: "Enter your location"
             .submit-button-container
               = submit_tag "Submit", class: "btn btn-primary"
         .sightings-listing
