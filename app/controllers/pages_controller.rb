@@ -36,8 +36,4 @@ class PagesController < ApplicationController
     @sightings = sightings.compact
   end
 
-  def gallery
-    
-  end
-
 end

@@ -1,0 +1,23 @@
+#video-feeds {
+  .video-feed {
+    width: 720px;
+  }
+  #iss-stream {
+    height: 428px;
+    margin-bottom: 40px;
+  }
+  #hd-experiment {
+    height: 446px;
+  }
+
+  @media (max-width: 375px) {
+    #iss-stream {
+      width: 355px;
+      height: 211px;
+    }
+    #hd-experiment {
+      width: 355px;
+      height: 220px;
+    }
+  }
+}

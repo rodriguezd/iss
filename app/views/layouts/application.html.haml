@@ -5,6 +5,7 @@
     %meta{charset: "utf-8"}
     %meta{name: "viewport", content:"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"}
     = stylesheet_link_tag    'application', media: 'all'
+    = stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Roboto+Slab:300,400', media: 'all'
     = javascript_include_tag 'application'
     = javascript_include_tag :modernizr
     = csrf_meta_tags
@@ -44,7 +45,7 @@
               %a{ href: pages_crew_path}
                 Crew
             %li
-              %a{ href: "#"}
+              %a{ href: pages_video_feeds_path}
                 Live Video
 
     .container
