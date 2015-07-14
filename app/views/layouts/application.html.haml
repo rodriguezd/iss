@@ -35,18 +35,19 @@
             %li
               %a{ href: root_path}
                 Home
-            %li
-              %a{ href: "#"}
-                Facts/Figures
-            %li
-              %a{ href: pages_gallery_path}
-                Gallery
+            / %li
+            /   %a{ href: "#"}
+            /     Facts/Figures
+            
             %li
               %a{ href: pages_crew_path}
                 Crew
             %li
               %a{ href: pages_video_feeds_path}
                 Live Video
+            %li
+              %a{ href: pages_gallery_path}
+                Gallery
 
     .container
       = yield

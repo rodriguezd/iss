@@ -7,3 +7,10 @@ body {
 .container {
   padding: 0;
 }
+
+a {
+  &:link {
+    text-decoration: none;
+    color: #0086FF;
+  }
+}
