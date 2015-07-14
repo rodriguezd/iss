@@ -2,9 +2,40 @@ class PagesController < ApplicationController
   require 'open-uri'
   require 'geocoder'
 
+  # class TwitterFeed
+
+  #   def client
+  #     @client ||= TwitterClient.client
+  #   end
+
+  #   def latest_crew_tweet
+  #     @latest_crew_tweet ||= client.list_timeline(210694515).first
+  #   end
+
+  #   def crew_tweet_image
+  #     latest_crew_tweet.user.screen_name.downcase + ".jpg"
+  #   rescue Twitter::Error => e
+  #     ''
+  #   end
+
+  #   def crew_html
+  #     @crew_html ||= fetch_crew_html
+  #   end
+
+  #   private
+
+  #   def fetch_crew_html
+  #     latest_crew_tweet_id = latest_crew_tweet.id
+  #     json = open("https://api.twitter.com/1/statuses/oembed.json?id=#{latest_crew_tweet_id}").read
+  #     data = JSON.parse(json)
+  #     data["html"]
+  #   rescue Twitter::Error => e
+  #     ''
+  #   end
+  # end
+
   def home
     twitter_feed = TwitterClient.client
-    # twitter_feed = TwitterClient
     latest_crew_tweet = twitter_feed.list_timeline(210694515).first
     latest_crew_tweet_id = latest_crew_tweet.id
     @latest_crew_tweet_image = latest_crew_tweet.user.screen_name.downcase + ".jpg"
@@ -12,7 +43,6 @@ class PagesController < ApplicationController
     data = JSON.parse(json)
     @crew_tweet_html = data["html"]
 
-    # latest_iss_tweet_id = twitter_feed.user_timeline("ISS101").first.id
     latest_iss_tweet_id = twitter_feed.list_timeline(212963954).first.id
     json = open("https://api.twitter.com/1/statuses/oembed.json?id=#{latest_iss_tweet_id}").read
     data = JSON.parse(json)

@@ -25,7 +25,6 @@
           .iss-feed-picture
             = image_tag "ISS_insignia.svg", width: "211px"
           .iss-tweet
-            /%a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610170383933808640", :href => "https://twitter.com/ISS101"} Tweets by @ISS101
             = raw @iss_tweet_html
 
       .col-md-3
@@ -35,5 +34,4 @@
           .crew-member-picture
             = image_tag @latest_crew_tweet_image, width: "211px"
           .crew-member-tweet
-            /%a.twitter-timeline{"data-dnt" => "true", "data-widget-id" => "610164536457457664", :href => "https://twitter.com/StationCDRKelly"} Tweets by @StationCDRKelly
             = raw @crew_tweet_html
