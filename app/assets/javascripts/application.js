@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require jquery.mb.YTPlayer
-//= require bootstrap-image-gallery
 //= require blueimp-gallery
+//= require bootstrap-image-gallery
+//= require jquery.blueimp-gallery.js
 //= require_tree .
