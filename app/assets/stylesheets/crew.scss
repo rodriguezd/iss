@@ -5,7 +5,14 @@
     }
   }
 
+  .crew-member {
+    .crew-name {
+      font-size: 20px;
+    }
+  }
+
   .page-title {
+    color: #96CBED;
     margin-top: 0;
     margin-bottom: 25px;
   }
@@ -28,6 +35,10 @@
     .crew-member {
       margin-bottom: 20px;
     }
+  }
+
+  .nationality {
+    font-size: 24px;
   }
 
   .nationality-russia {

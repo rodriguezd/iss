@@ -9,8 +9,14 @@ body {
 }
 
 a {
+  color: #0086FF;
   &:link {
     text-decoration: none;
+  }
+  &:hover {
+    color: #0086FF;
+  }
+  &:visited {
     color: #0086FF;
   }
 }

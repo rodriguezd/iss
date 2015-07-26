@@ -3,48 +3,48 @@
     %h2.text-center.page-title Expedition 44 Crew
   .row
     .expedition-patch.text-center
-      = image_tag 'iss044-insignia.png'
+      = image_tag 'iss044-insignia v2.png'
   .row
     .col-sm-4
       .crew-member.crew-member-1.text-center
         = link_to "http://www.jsc.nasa.gov/Bios/htmlbios/kellysj.pdf", target: "_blank" do
           = image_tag 'stationcdrkelly.jpg', width: "260px"
         .crew-name.text-center= link_to "Scott Kelly", "http://www.jsc.nasa.gov/Bios/htmlbios/kellysj.pdf", target: "_blank"
-        .nationality-us
-        .crew-member-highlight.text-center (Year in Space Mission)
+        .nationality.nationality-us
+        .crew-member-highlight.text-center= link_to "(One-Year Mission)", "https://www.nasa.gov/1ym", target: "_blank"
     .col-sm-4
       .crew-member.crew-member-2.text-center
         = link_to "http://www.jsc.nasa.gov/Bios/htmlbios/padalka.html", target: "_blank" do
           = image_tag 'padalka.jpg', width: "260px"
         .crew-name.text-center= link_to "Commander Gennady Padalka", "http://www.jsc.nasa.gov/Bios/htmlbios/padalka.html", target: "_blank"
-        .nationality-russia
+        .nationality.nationality-russia
         .crew-member-highlight.text-center
     .col-sm-4
       .crew-member.crew-member-3.text-center
         = link_to "http://www.jsc.nasa.gov/Bios/htmlbios/kornienko.html", target: "_blank" do
           = image_tag 'mkornienko.jpg', width: "260px"
         .crew-name.text-center= link_to "Mikhail Kornienko", "http://www.jsc.nasa.gov/Bios/htmlbios/kornienko.html", target: "_blank"
-        .nationality-russia
-        .crew-member-highlight.text-center (Year in Space Mission)
+        .nationality.nationality-russia
+        .crew-member-highlight.text-center= link_to "(One-Year Mission)", "https://www.nasa.gov/1ym", target: "_blank"
   .row.second-row
     .col-sm-4
       .crew-member.crew-member-4.text-center
         = link_to "http://www.jsc.nasa.gov/Bios/htmlbios/kononenko.html", target: "_blank" do
           = image_tag 'kononenko.jpg', width: "260px"
         .crew-name.text-center= link_to "Oleg Kononenko", "http://www.jsc.nasa.gov/Bios/htmlbios/kononenko.html", target: "_blank"
-        .nationality-russia
-        .crew-member-highlight.text-center (Arriving late July)
+        .nationality.nationality-russia
+        .crew-member-highlight.text-center
     .col-sm-4
       .crew-member.crew-member-5.text-center
         = link_to "http://www.jsc.nasa.gov/Bios/htmlbios/lindgren-kn.html", target: "_blank" do
           = image_tag 'lindgren.jpg', width: "260px"
         .crew-name.text-center= link_to "Kjell Lindgren", "http://www.jsc.nasa.gov/Bios/htmlbios/lindgren-kn.html", target: "_blank"
-        .nationality-us
-        .crew-member-highlight.text-center (Arriving late July)
+        .nationality.nationality-us
+        .crew-member-highlight.text-center
     .col-sm-4
       .crew-member.crew-member-6.text-center
         = link_to "http://iss.jaxa.jp/en/astro/biographies/yui/index.html", target: "_blank" do
           = image_tag 'yui.jpg', width: "260px"
         .crew-name.text-center= link_to "Kimiya Yui", "http://iss.jaxa.jp/en/astro/biographies/yui/index.html", target: "_blank"
-        .nationality-japan
-        .crew-member-highlight.text-center (Arriving late July)
+        .nationality.nationality-japan
+        .crew-member-highlight.text-center
