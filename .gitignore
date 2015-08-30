@@ -82,3 +82,6 @@ dump.rdb
 # PostgreSQL dump
 latest.dump
 db.dump
+
+# rbenv
+.ruby-version
